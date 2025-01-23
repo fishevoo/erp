@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="logo.jpg" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERP - PT KARUNIA BERCA INDONESIA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        nav {
+            background-color: #c02929;
+            color: white;
+            padding: 1em;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            margin: 0;
+        }
+        nav ul li {
+            margin: 0 1em;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1em;
+        }
+        .card {
+            background-color: white;
+            padding: 1em;
+            margin-bottom: 1em;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .card h2 {
+            margin-top: 0;
+        }
+        section {
+            padding: 2em;
+            background-color: white;
+            margin: 1em auto;
+            max-width: 800px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        form {
+            margin-top: 1em;
+        }
+        label {
+            display: block;
+            margin-top: 0.5em;
+            font-weight: bold;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 0.5em;
+            margin-top: 0.5em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            width: auto;
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            padding: 0.5em 1em;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        input[type="submit"]:hover {
+            background-color: #ff0000;
+        }
+        
+        th, td {
+            padding: 0.5em;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .login-container {
+            max-width: 400px;
+            margin: 2em auto;
+            padding: 2em;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .login-container h2 {
+            margin-top: 0;
+            text-align: center;
+        }
+        .logo {
+            display: block;
+            margin: 0 auto;
+            max-width: 150px;
+            padding: 1em 0;
+            nav-left: auto;
+        }
+        nav .logo {
+            max-width: 50px;
+            padding: 0;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <img src="logo.jpg" alt="Company Logo" class="logo">
+        <h2>Login ERP</h2>
+        <form id="login-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
+    <nav class="hidden">
+        <img src="logo.jpg" alt="Company Logo" class="logo">
+        <ul>
+            <li><a href="#purchase-order">Purchase Order</a></li>
+            <li><a href="#purchase-request">Purchase Request</a></li>
+            <li><a href="#inventory">Inventory</a></li>
+            <li><a href="#sales">Sales</a></li>
+            <li><a href="#reports">Reports</a></li>
+            <li><a href="#hrd">HRD</a></li>
+            <li><a href="#" id="logout-btn">Logout</a></li>
+        </ul>
+    </nav>
+          
+    <div class="container hidden">
+        <section id="purchase-order" class="card">
+            <h2>Purchase Order</h2>
+            <form id="purchase-order-form">
+                <label for="po-number">PO Number:</label>
+                <input type="text" id="po-number" name="po-number"><br><br>
+                
+                <label for="po-date">Date:</label>
+                <input type="date" id="po-date" name="po-date"><br><br>
+                
+                <label for="supplier">Supplier:</label>
+                <input type="text" id="supplier" name="supplier"><br><br>
+                
+                <label for="items">Items:</label>
+                <textarea id="items" name="items"></textarea><br><br>
+                
+                <input type="submit" value="Submit">
+            </form>
+        </section>
+
+        <section id="purchase-request" class="card">
+            <h2>Purchase Request</h2>
+            <form id="purchase-request-form">
+                <label for="pr-number">PR Number:</label>
+                <input type="text" id="pr-number" name="pr-number"><br><br>
+                
+                <label for="pr-date">Date:</label>
+                <input type="date" id="pr-date" name="pr-date"><br><br>
+                
+                <label for="requester">Requester:</label>
+                <input type="text" id="requester" name="requester"><br><br>
+                
+                <label for="description">Description:</label>
+                <textarea id="description" name="description"></textarea><br><br>
+                
+                <input type="submit" value="Submit">
+            </form>
+        </section>
+
+        <section id="inventory" class="card">
+            <h2>Inventory</h2>
+            <form id="inventory-form">
+                <label for="item-code">Item Code:</label>
+                <input type="text" id="item-code" name="item-code" required><br><br>
+                
+                <label for="item-name">Item Name:</label>
+                <input type="text" id="item-name" name="item-name" required><br><br>
+                
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" min="0" required><br><br>
+                
+                <label for="unit">Unit:</label>
+                <input type="text" id="unit" name="unit" required><br><br>
+                
+                <label for="location">Storage Location:</label>
+                <input type="text" id="location" name="location" required><br><br>
+                
+                <input type="submit" value="Add Item">
+            </form>
+
+            <h3>Current Inventory</h3>
+            <table style="width:100%; border-collapse: collapse; margin-top: 1em;">
+                <thead>
+                    <tr>
+                        <th>Item Code</th>
+                        <th>Item Name</th>
+                        <th>Quantity</th>
+                        <th>Unit</th>
+                        <th>Location</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="inventory-table">
+                    <!-- Inventory items will be dynamically added here -->
+                </tbody>
+            </table>
+        </section>
+
+        <section id="sales" class="card">
+            <h2>Sales</h2>
+            <form id="sales-form">
+                <label for="sales-number">Sales Number:</label>
+                <input type="text" id="sales-number" name="sales-number"><br><br>
+                
+                <label for="sales-date">Date:</label>
+                <input type="date" id="sales-date" name="sales-date"><br><br>
+                
+                <label for="customer">Customer:</label>
+                <input type="text" id="customer" name="customer"><br><br>
+                
+                <label for="sales-items">Items:</label>
+                <textarea id="sales-items" name="sales-items"></textarea><br><br>
+                
+                <input type="submit" value="Submit">
+            </form>
+        </section>
+
+        <section id="reports" class="card">
+            <h2>Reports</h2>
+            <p>Generate and view reports here.</p>
+            <button onclick="generateReport()">Generate Report</button>
+            <div id="report-output"></div>
+        </section>
+
+        <section id="hrd" class="card">
+            <h2>HRD</h2>
+            <form id="hr-form">
+                <label for="employee-id">Employee ID:</label>
+                <input type="text" id="employee-id" name="employee-id"><br><br>
+                
+                <label for="employee-name">Employee Name:</label>
+                <input type="text" id="employee-name" name="employee-name"><br><br>
+                
+                <label for="employee-department">Department:</label>
+                <input type="text" id="employee-department" name="employee-department"><br><br>
+                
+                <label for="employee-position">Position:</label>
+                <input type="text" id="employee-position" name="employee-position"><br><br>
+                
+                <input type="submit" value="Add Employee">
+            </form>
+        </section>
+    </div>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username.trim() === '' || password.trim() === '') {
+                alert('Please enter both username and password');
+                return;
+            }
+
+            // Di sini bisa ditambahkan validasi lebih lanjut
+
+            document.querySelector('.login-container').style.display = 'none';
+            document.querySelector('nav').classList.remove('hidden');
+            document.querySelector('.container').classList.remove('hidden');
+        });
+
+        document.getElementById('purchase-order-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Purchase Order Submitted');
+        });
+
+        document.getElementById('purchase-request-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Purchase Request Submitted');
+        });
+
+        document.getElementById('sales-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Sales Submitted');
+        });
+
+        document.getElementById('hr-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Employee Added');
+        });
+
+        document.getElementById('inventory-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Item added to inventory');
+        });
+
+        function generateReport() {
+            document.getElementById('report-output').innerText = 'Report generated successfully!';
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('nav').classList.add('hidden');
+            document.querySelector('.container').classList.add('hidden');
+        });
+        alert('Welcome to ERP - PT KARUNIA BERCA INDONESIA');
+
+        // Tambahkan fungsi logout
+        document.getElementById('logout-btn').addEventListener('click', function() {
+            document.querySelector('.login-container').style.display = 'block';
+            document.querySelector('nav').classList.add('hidden');
+            document.querySelector('.container').classList.add('hidden');
+            document.getElementById('username').value = '';
+            document.getElementById('password').value = '';
+        });
+
+    </script>
+</body>
+</html>
